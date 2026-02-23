@@ -1,3 +1,17 @@
-const myModule = require('./my-module.js');
+const condition = true;
 
-console.log(myModule.myFunction());
+const myPromise = new Promise((resolve, reject) => {
+  if (condition) {
+    resolve("Success!");
+  } else {
+    reject("Failure!");
+  }
+});
+
+myPromise
+  .then(result => {
+    console.log(result);
+  })
+  .catch(error => {
+    console.log(error);
+  });
